@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tunnel xmlns:site="http://github.com/yxping">
+
+    <name>
+        jsTunnel
+    </name>
+
+    <author email="yxpflyman@gmail.com">
+        yxp
+    </author>
+
+    <!-- 设置开启页面-->
+    <content src="index.html" />
+
+    <!-- 参数 -->
+    <!--<preference name="webview" value=""/>-->
+
+    <!-- 插件 -->
+    <plugin
+        name="toast"
+        value="com.yxp.tunnel.plugins.ToastPlugin" />
+    <plugin
+        name="camera"
+        value="com.yxp.tunnel.plugins.CameraPlugin" />
+</tunnel>

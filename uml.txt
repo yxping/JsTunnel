@@ -1,0 +1,90 @@
+interface ExposeApiToJs{
+	+ void exec(String[])
+}
+class JsTunnel {
+
+}
+ExposeApiToJs <|.. JsTunnel
+
+interface TunnelWebView{
+
+}
+
+class SystemWebView{
+
+}
+TunnelWebView <|.. SystemWebView
+SystemWebView --> JsTunnel
+
+class TunnelWebChromeClient{
+
+}
+class TunnelWebClient{
+
+}
+SystemWebView --> TunnelWebClient
+SystemWebView --> TunnelWebChromeClient
+
+interface TunnelInterface {
+
+}
+class TunnelActivity{
+
+}
+TunnelInterface <|.. TunnelActivity
+TunnelActivity --> TunnelWebView
+
+class ConfigXmlPaser{
+
+}
+TunnelActivity --> ConfigXmlPaser
+
+class BaseTunnelPlugin{
+
+}
+class CorePlugin{
+
+}
+BaseTunnelPlugin <|-- CorePlugin
+class PluginManager{
+
+}
+PluginManager --> BaseTunnelPlugin
+TunnelActivity --> PluginManager
+
+class MessageToJsQueue{
+
+}
+JsTunnel --> MessageToJsQueue
+
+class PluginResultMsg{
+
+}
+CorePlugin --> PluginResultMsg
+MessageToJsQueue --> PluginResultMsg
+
+class CallBackChannal{
+
+}
+JsTunnel --> CallBackChannal
+CallBackChannal --> PluginResultMsg
+
+class LOG{
+
+}
+class jsMergeHelper{
+
+}
+TunnelActivity --> jsMergeHelper
+class TunnelSettings{
+
+}
+class TunnelConstants{
+
+}
+class TunnelContainer{
+
+}
+class TunnelContext{
+
+}
